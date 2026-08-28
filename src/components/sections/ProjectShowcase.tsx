@@ -84,8 +84,11 @@ export function ProjectShowcase() {
   useEffect(() => {
     function update() {
       const w = window.innerWidth;
-      /* Calculate cell width to fill container — shell max ~1200px */
-      const containerW = Math.min(w - 48, 1200);
+      /* Mirror the .shell column: max-width 1200px minus the responsive
+         side padding, so the grid fills the same centred column as every
+         other section instead of its own width. */
+      const pad = w >= 1024 ? 128 : w >= 768 ? 96 : w >= 480 ? 64 : 48;
+      const containerW = Math.min(w, 1200) - pad;
       if (w < 640) {
         setCols(2);
         setGapSize(10);
@@ -170,21 +173,24 @@ export function ProjectShowcase() {
           from { transform: translate(0, 0); }
           to { transform: translate(-80px, -80px); }
         }
+        /* % of the (overflow-hidden) container — see ServicesSection note.
+           Using vw/vh here referenced the viewport incl. the scrollbar and
+           produced a horizontal scroll that shifted centered content left. */
         @keyframes pulseH1 {
           0%, 100% { transform: translateX(-100%); }
-          50% { transform: translateX(100vw); }
+          50% { transform: translateX(250%); }
         }
         @keyframes pulseH2 {
           0%, 100% { transform: translateX(100%); }
-          50% { transform: translateX(-100vw); }
+          50% { transform: translateX(-250%); }
         }
         @keyframes pulseV1 {
           0%, 100% { transform: translateY(-100%); }
-          50% { transform: translateY(100vh); }
+          50% { transform: translateY(220%); }
         }
         @keyframes pulseV2 {
           0%, 100% { transform: translateY(100%); }
-          50% { transform: translateY(-100vh); }
+          50% { transform: translateY(-220%); }
         }
       `}</style>
 

@@ -91,21 +91,26 @@ export function ServicesSection() {
           from { transform: translate(0, 0); }
           to { transform: translate(-80px, -80px); }
         }
+        /* Sweep values are expressed in % of the (overflow-hidden) container,
+           never vw/vh. Referencing the viewport pulled these lines past the
+           right edge by the scrollbar width on desktop browsers with a
+           classic scrollbar, which forced a horizontal scroll and shifted
+           every centered section left. */
         @keyframes pulseH1 {
           0%, 100% { transform: translateX(-100%); }
-          50% { transform: translateX(100vw); }
+          50% { transform: translateX(250%); }
         }
         @keyframes pulseH2 {
           0%, 100% { transform: translateX(100%); }
-          50% { transform: translateX(-100vw); }
+          50% { transform: translateX(-250%); }
         }
         @keyframes pulseV1 {
           0%, 100% { transform: translateY(-100%); }
-          50% { transform: translateY(100vh); }
+          50% { transform: translateY(220%); }
         }
         @keyframes pulseV2 {
           0%, 100% { transform: translateY(100%); }
-          50% { transform: translateY(-100vh); }
+          50% { transform: translateY(-220%); }
         }
       `}</style>
 
