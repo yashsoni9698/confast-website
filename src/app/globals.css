@@ -1,26 +1,810 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ═══════════════════════════════════════════════
+   CONFAST DESIGN SYSTEM
+   Palette is unchanged — taken from the brochure:
+   #F39100 brand orange   #EF7800 product orange
+   #D16312 clay           #1A1A18 ink
+   #868786 warm grey      #ECEDED light grey
+
+   Type: SF Pro Display / SF Pro Text on Apple
+   platforms, Inter everywhere else, then
+   Helvetica Neue / Arial.
+═══════════════════════════════════════════════ */
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-inter),
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+
+  --color-orange: #f39100;
+  --color-orange-deep: #ef7800;
+  --color-clay: #d16312;
+  --color-ink: #1a1a18;
+  --color-ink-deep: #101010;
+  --color-bone: #f7f6f3;
+  --color-sand: #ebe7e0;
+  --color-warm-grey: #868786;
+
+  /* ── Type scale ──────────────────────────────
+     Retuned to the brief: body 18/1.8, small 15,
+     button 16/600. Overriding Tailwind's scale
+     lifts every `text-sm` / `text-base` in the
+     codebase in one move, so the hierarchy stays
+     consistent instead of drifting per file. */
+  --text-xs: 0.8125rem; /* 13 — captions, chips */
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.9375rem; /* 15 — small text */
+  --text-sm--line-height: 1.65;
+  --text-base: 1.125rem; /* 18 — body */
+  --text-base--line-height: 1.8;
+  --text-lg: 1.25rem; /* 20 */
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.5rem; /* 24 — sub heading */
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.75rem; /* 28 */
+  --text-2xl--line-height: 1.25;
+  --text-3xl: 2rem; /* 32 — product heading */
+  --text-3xl--line-height: 1.15;
+
+  /* Motion — one easing curve for the whole site */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --sf-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+      var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+    --sf-text: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+      var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+
+    --orange: #f39100;
+    --orange-deep: #ef7800;
+    --clay: #d16312;
+    --ink: #1a1a18;
+    --ink-deep: #101010;
+    --ink-stage: #0e0e0d;
+    --bone: #f7f6f3;
+    --sand: #ebe7e0;
+    --grey: #868786;
+
+    /* Secondary copy uses solid tones, never low-opacity black/white —
+       that is what keeps small text above 4.5:1 on both surfaces. */
+    --ink-muted: #62615c; /* on bone → 6.4:1 */
+    --ink-muted-invert: #a3a29e; /* on ink  → 7.6:1 */
+    --ink-dim-invert: #8d8c88; /* on ink  → 5.6:1 */
+
+    --line: rgba(26, 26, 24, 0.12);
+    --line-invert: rgba(255, 255, 255, 0.16);
+
+    --focus: #f39100;
+
+    /* Section rhythm */
+    --band: 5rem;
+    --gutter: 1.25rem;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: auto;
+  }
+
+  /* `overflow-x: hidden` is deliberately NOT used on html/body: it turns the
+     root into a scroll container, which silently breaks `position: sticky`
+     and every ScrollTrigger pin. `clip` contains horizontal bleed without
+     creating a scroll container, so the pinned product stage keeps working. */
+  .clip-x {
+    overflow-x: clip;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: var(--sf-text);
+    font-size: 1.125rem; /* 18 */
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: -0.011em;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: var(--orange);
+    color: #fff;
+  }
+
+  /* ── Focus ───────────────────────────────────
+     There was no visible focus state anywhere.
+     One ring, on every focusable thing, only for
+     keyboard users. */
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .on-ink :focus-visible,
+  .on-ink:focus-visible {
+    outline-color: #ffb648;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 200;
+    transform: translateY(-160%);
+    background: var(--ink);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 980px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.3s var(--ease-premium);
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--sand);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--orange);
+  }
+
+  /* Anchor offset for the sticky header */
+  :target {
+    scroll-margin-top: 6rem;
+  }
+
+  /* ── Mobile optimisations ─────────────────── */
+  @media (max-width: 479px) {
+    body {
+      font-size: 1rem; /* 16px on small phones */
+      line-height: 1.7;
+    }
+  }
+
+  /* Minimum touch target size for interactive elements */
+  @media (pointer: coarse) {
+    button,
+    a,
+    [role="button"],
+    input,
+    select,
+    textarea {
+      min-height: 44px;
+    }
+    input, select, textarea {
+      font-size: 16px; /* prevents zoom on iOS */
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      animation-delay: 0ms !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+      scroll-behavior: auto !important;
+    }
+    .kenburns,
+    .hero-rise,
+    .drift,
+    .drift-slow,
+    .trace {
+      animation: none !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* ── Layout ───────────────────────────────── */
+  .shell {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  @media (min-width: 480px) {
+    .shell {
+      padding: 0 1.5rem;
+    }
+  }
+  @media (min-width: 640px) {
+    .shell {
+      padding: 0 2rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .shell {
+      padding: 0 3rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .shell {
+      padding: 0 4rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .shell {
+      padding: 0 5rem;
+    }
+  }
+  @media (min-width: 1440px) {
+    .shell {
+      padding: 0 6rem;
+    }
+  }
+
+  /* Alias kept so inner pages keep working */
+  .container-custom {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  @media (min-width: 480px) {
+    .container-custom {
+      padding: 0 1.5rem;
+    }
+  }
+  @media (min-width: 640px) {
+    .container-custom {
+      padding: 0 2rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .container-custom {
+      padding: 0 3rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding: 0 4rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container-custom {
+      padding: 0 5rem;
+    }
+  }
+  @media (min-width: 1440px) {
+    .container-custom {
+      padding: 0 6rem;
+    }
+  }
+
+  /* One vertical rhythm for every section. More generous than before —
+     the audit's main layout finding was cramped section spacing. */
+  .band {
+    padding: 3.5rem 0;
+  }
+  @media (min-width: 480px) {
+    .band {
+      padding: 5rem 0;
+    }
+  }
+  @media (min-width: 768px) {
+    .band {
+      padding: 6rem 0;
+    }
+  }
+  @media (min-width: 1024px) {
+    .band {
+      padding: 7rem 0;
+    }
+  }
+  @media (min-width: 1280px) {
+    .band {
+      padding: 8rem 0;
+    }
+  }
+  .band-tight {
+    padding: 3rem 0;
+  }
+  @media (min-width: 768px) {
+    .band-tight {
+      padding: 5.5rem 0;
+    }
+  }
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+  @media (min-width: 480px) {
+    .section-padding {
+      padding: 5rem 0;
+    }
+  }
+  @media (min-width: 768px) {
+    .section-padding {
+      padding: 7rem 0;
+    }
+  }
+
+  /* Standard gap between a section head and its content */
+  .head-gap {
+    margin-top: 3.5rem;
+  }
+  @media (min-width: 1024px) {
+    .head-gap {
+      margin-top: 5rem;
+    }
+  }
+
+  /* ── Surfaces ─────────────────────────────── */
+  .card-apple {
+    background: #fff;
+    border-radius: 1.25rem;
+    transition: transform 0.7s var(--ease-premium),
+      box-shadow 0.7s var(--ease-premium);
+  }
+  @media (min-width: 768px) {
+    .card-apple {
+      border-radius: 1.5rem;
+    }
+  }
+  .card-apple:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 48px rgba(26, 26, 24, 0.1);
+  }
+
+  .plate,
+  .card-premium {
+    background: #fff;
+    border-radius: 1.25rem;
+    border: 1px solid var(--line);
+    transition: border-color 0.5s ease, transform 0.6s var(--ease-premium),
+      box-shadow 0.6s var(--ease-premium);
+  }
+  .plate:hover,
+  .card-premium:hover {
+    border-color: rgba(243, 145, 0, 0.45);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(26, 26, 24, 0.08);
+  }
+
+  .glass {
+    background: rgba(247, 246, 243, 0.72);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 1px 24px rgba(26, 26, 24, 0.05);
+  }
+
+  .glass-ink {
+    background: rgba(16, 16, 16, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--line-invert);
+  }
+
+  /* ═══ Type ═══
+     Scale from the brief, expressed fluidly so it
+     lands on the stated desktop sizes and stays
+     readable on a phone:
+       hero 72/700 · section 48/700 · product 32/600
+       sub 24/500 · body 18/400/1.8 · small 15
+       button 16/600                                */
+  .display {
+    font-family: var(--sf-display);
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    line-height: 1.06;
+  }
+
+  /* Hero — 72px */
+  .display-xl {
+    font-size: clamp(2.625rem, 5.6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.026em;
+  }
+  /* Main section heading — 48px */
+  .display-lg {
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+  }
+  /* Product heading — 32px */
+  .display-md {
+    font-size: clamp(1.625rem, 2.4vw, 2rem);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+  }
+  /* Sub heading — 24px */
+  .display-sm {
+    font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.32;
+    letter-spacing: -0.014em;
+  }
+
+  .title {
+    font-family: var(--sf-display);
+    font-weight: 600;
+    letter-spacing: -0.014em;
+    line-height: 1.2;
+  }
+
+  /* Emphasis is weight + colour, never italics */
+  .italic-accent {
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.026em;
+  }
+
+  .eyebrow {
+    font-family: var(--sf-text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* Intro / supporting copy under a heading */
+  .lede {
+    font-family: var(--sf-display);
+    font-size: clamp(1.125rem, 1.35vw, 1.375rem);
+    line-height: 1.55;
+    font-weight: 400;
+    letter-spacing: -0.014em;
+  }
+
+  /* Body — 18 / 1.8 */
+  .body-copy {
+    font-family: var(--sf-text);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: -0.011em;
+  }
+
+  /* Small — 15 */
+  .body-sm {
+    font-family: var(--sf-text);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    font-weight: 400;
+    letter-spacing: -0.008em;
+  }
+
+  .caption {
+    font-family: var(--sf-text);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .numeral {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+  }
+
+  .accent,
+  .text-gradient {
+    color: var(--orange);
+  }
+
+  .text-muted {
+    color: var(--ink-muted);
+  }
+  .text-muted-invert {
+    color: var(--ink-muted-invert);
+  }
+  .text-dim-invert {
+    color: var(--ink-dim-invert);
+  }
+
+  /* ── Rules & marks ────────────────────────── */
+  .hairline {
+    height: 1px;
+    width: 100%;
+    background: var(--line);
+  }
+  .hairline-invert {
+    height: 1px;
+    width: 100%;
+    background: var(--line-invert);
+  }
+  .section-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--orange);
+    margin-bottom: 1.5rem;
+  }
+  .tick {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--orange);
+    flex-shrink: 0;
+  }
+
+  /* ── Buttons ──────────────────────────────────
+     16 / 600 per the brief, pill radius, generous
+     padding, and a subtle lift on hover. Transform
+     is GPU-composited so the lift stays at 60fps. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8125rem 1.5rem;
+    font-family: var(--sf-text);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    line-height: 1.2;
+    border: 1px solid transparent;
+    border-radius: 980px;
+    transition: background-color 0.4s var(--ease-premium),
+      color 0.4s var(--ease-premium), border-color 0.4s var(--ease-premium),
+      transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
+  }
+  @media (min-width: 480px) {
+    .btn {
+      gap: 0.625rem;
+      padding: 0.9375rem 1.75rem;
+      font-size: 1rem;
+    }
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn:active {
+    transform: translateY(0);
+    transition-duration: 0.1s;
+  }
+
+  .btn-solid {
+    background: var(--ink);
+    color: #fff;
+  }
+  .btn-solid:hover {
+    background: var(--orange);
+    box-shadow: 0 12px 28px rgba(243, 145, 0, 0.28);
+  }
+
+  .btn-orange {
+    background: var(--orange);
+    color: #fff;
+  }
+  .btn-orange:hover {
+    background: var(--orange-deep);
+    box-shadow: 0 12px 28px rgba(243, 145, 0, 0.32);
+  }
+
+  .btn-line {
+    border-color: rgba(26, 26, 24, 0.22);
+    color: var(--ink);
+  }
+  .btn-line:hover {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(26, 26, 24, 0.16);
+  }
+
+  .btn-line-invert {
+    border-color: rgba(255, 255, 255, 0.34);
+    color: #fff;
+  }
+  .btn-line-invert:hover {
+    background: #fff;
+    color: var(--ink);
+    border-color: #fff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  }
+
+  .btn-ghost-invert {
+    color: #fff;
+  }
+  .btn-ghost-invert:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Inline text action — the "Learn more ›" affordance */
+  .action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    color: var(--orange);
+  }
+  .action > .action-chev {
+    transition: transform 0.45s var(--ease-premium);
+  }
+  .action:hover > .action-chev,
+  .group:hover .action > .action-chev {
+    transform: translateX(4px);
+  }
+
+  .badge-orange {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 980px;
+    background: var(--orange);
+    color: #fff;
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.375rem 0.75rem;
+  }
+
+  /* Spec / meta chip */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 980px;
+    border: 1px solid var(--line);
+    padding: 0.3125rem 0.75rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--ink-muted);
+  }
+  .chip-invert {
+    border-color: var(--line-invert);
+    color: var(--ink-muted-invert);
+  }
+
+  /* ── Textures ─────────────────────────────── */
+  .blueprint {
+    background-image: linear-gradient(rgba(26, 26, 24, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 26, 24, 0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+  .blueprint-invert {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ── Reveal / interaction primitives ──────── */
+  .reveal-mask {
+    display: block;
+    overflow: hidden;
+  }
+
+  .link-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.55s var(--ease-premium);
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .product-img-wrap {
+    overflow: hidden;
+  }
+
+  /* Scroll progress rail (top of viewport) */
+  .scroll-rail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: 60;
+    pointer-events: none;
+  }
+  .scroll-rail > span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform-origin: 0 50%;
+    background: var(--orange);
+    will-change: transform;
+  }
+
+  /* ── Keyframes ────────────────────────────── */
+  @keyframes drift {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .drift {
+    animation: drift 42s linear infinite;
+  }
+  .drift-slow {
+    animation: drift 70s linear infinite;
+  }
+
+  @keyframes kenburns {
+    0% {
+      transform: scale(1.02) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.12) translate3d(-1%, -1%, 0);
+    }
+  }
+  .kenburns {
+    animation: kenburns 26s ease-out forwards;
+  }
+
+  @keyframes hero-rise {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 26px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .hero-rise {
+    animation: hero-rise 1.2s var(--ease-premium) both;
+  }
+
+  @keyframes trace {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(220%);
+    }
+  }
+  .trace {
+    animation: trace 2.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
 }

@@ -1,0 +1,662 @@
+[
+  {
+    "id": "block-fix",
+    "name": "Confast Block Fix",
+    "tagline": "Ready-to-Mix Block Mounting Mortar",
+    "category": "Mortars",
+    "type": "Cementitious Mortar",
+    "image": "/images/products/block-fix.png",
+    "heroImage": "/images/products/block-fix.png",
+    "color": "#F39100",
+    "badge": "BESTSELLER",
+    "shortDescription": "A ready-to-mix, self-curing cementitious mortar specially designed for mounting various blocks, bricks and masonry units with superior bond strength.",
+    "fullDescription": "Confast Block Fix is a premium, ready-to-use, single-component cementitious mortar engineered for the mounting of AAC blocks, CLC blocks, fly ash bricks, and natural stone blocks. Its polymer-modified formula ensures excellent workability, minimal shrinkage, and outstanding adhesion to both block faces, making it the preferred choice of professional builders and contractors across India.",
+    "features": [
+      "Ready-to-mix — just add water",
+      "Self-curing formula reduces water curing effort",
+      "High compressive strength",
+      "Excellent bond strength with all masonry units",
+      "Reduced mortar consumption vs. sand-cement",
+      "Minimal shrinkage and cracking",
+      "Easy application and workability",
+      "BIS compliant formulation"
+    ],
+    "benefits": [
+      "Faster construction cycles",
+      "Uniform joint thickness (6–10 mm)",
+      "Reduces material wastage significantly",
+      "Works with AAC, CLC, fly ash and clay bricks",
+      "Weather-resistant after curing",
+      "Reduces structural load on building"
+    ],
+    "applications": [
+      "AAC Block Masonry",
+      "CLC Block Masonry",
+      "Fly Ash Brick Laying",
+      "Natural Stone Block Mounting",
+      "Reinforced Brick Masonry",
+      "Residential & Commercial Construction"
+    ],
+    "suitableFor": [
+      "Residential Buildings",
+      "Commercial Structures",
+      "Industrial Facilities",
+      "Institutional Projects"
+    ],
+    "coverage": "4–5 kg per sq.m at 10 mm thickness",
+    "packSize": [
+      "40 kg Bag"
+    ],
+    "shelfLife": "12 Months",
+    "color_field": "Grey",
+    "technicalSpecs": [
+      {
+        "parameter": "Compressive Strength (28 days)",
+        "value": "≥ 7.5 N/mm²"
+      },
+      {
+        "parameter": "Flexural Strength (28 days)",
+        "value": "≥ 2.5 N/mm²"
+      },
+      {
+        "parameter": "Tensile Adhesion Strength",
+        "value": "≥ 0.5 N/mm²"
+      },
+      {
+        "parameter": "Pot Life",
+        "value": "~60 minutes"
+      },
+      {
+        "parameter": "Joint Thickness",
+        "value": "6–10 mm"
+      },
+      {
+        "parameter": "Water / Powder Ratio",
+        "value": "0.17–0.19"
+      },
+      {
+        "parameter": "Shelf Life",
+        "value": "12 months in dry conditions"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the water-powder ratio for Block Fix?",
+        "answer": "Mix 1 part water to approximately 5.3 parts Block Fix powder by weight (0.17–0.19 water/powder ratio). Add water to powder, never the reverse."
+      },
+      {
+        "question": "Can Block Fix be used for exterior block laying?",
+        "answer": "Yes, Confast Block Fix is suitable for both interior and exterior masonry work. Ensure joints are protected from rain for the first 24 hours."
+      },
+      {
+        "question": "What joint thickness is recommended?",
+        "answer": "An optimal joint thickness of 6–10 mm is recommended for best performance and material efficiency."
+      }
+    ]
+  },
+  {
+    "id": "tileset-11",
+    "name": "Confast TileSet 11",
+    "tagline": "Type 1 Professional Tile Adhesive",
+    "category": "Tile Adhesives",
+    "type": "C1TE — Type 1 Tile Adhesive",
+    "image": "/images/products/tileset-11.png",
+    "heroImage": "/images/products/tileset-11.png",
+    "color": "#F39100",
+    "badge": "TYPE 1",
+    "shortDescription": "A single component, professional cement-based powder adhesive for fixing wall and floor tiles in dry interior areas.",
+    "fullDescription": "Confast TileSet 11 is a single-component, cement-based tile adhesive classified as C1TE (Type 1 with extended open time). It is engineered for fixing ceramic, vitrified, and mosaic tiles on interior walls and floors in normal dry conditions. The formulation ensures smooth application, excellent grab, and reliable long-term bond strength, meeting IS 15477 standards.",
+    "features": [
+      "Single component — just add water",
+      "Extended open time for easy tile adjustment",
+      "Good vertical non-sag properties",
+      "Smooth, creamy consistency",
+      "Strong initial grab",
+      "IS 15477 compliant",
+      "BIS approved formula"
+    ],
+    "benefits": [
+      "Easy to use for contractors and applicators",
+      "Cost-effective for large tiling projects",
+      "Suitable for thin-bed tile application",
+      "Excellent coverage efficiency",
+      "Minimizes hollow sounds beneath tiles"
+    ],
+    "applications": [
+      "Interior Floor Tiling",
+      "Interior Wall Tiling",
+      "Ceramic & Porcelain Tiles",
+      "Mosaic Tiles",
+      "Residential Flooring",
+      "Commercial Interiors"
+    ],
+    "suitableFor": [
+      "Residential Interiors",
+      "Commercial Offices",
+      "Retail Spaces",
+      "Hotels & Hospitality (dry areas)"
+    ],
+    "coverage": "3.5–4.5 kg per sq.m at 6 mm notch",
+    "packSize": [
+      "20 kg Bag",
+      "40 kg Bag"
+    ],
+    "shelfLife": "12 Months",
+    "color_field": "Grey / White",
+    "technicalSpecs": [
+      {
+        "parameter": "Classification",
+        "value": "C1TE (IS 15477)"
+      },
+      {
+        "parameter": "Tensile Adhesion Strength (28 days)",
+        "value": "≥ 0.5 N/mm²"
+      },
+      {
+        "parameter": "Open Time",
+        "value": "≥ 20 minutes"
+      },
+      {
+        "parameter": "Pot Life",
+        "value": "~4 hours"
+      },
+      {
+        "parameter": "Setting Time",
+        "value": "24 hours (light traffic)"
+      },
+      {
+        "parameter": "Full Cure",
+        "value": "28 days"
+      },
+      {
+        "parameter": "Shelf Life",
+        "value": "12 months in dry conditions"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which tiles is TileSet 11 suitable for?",
+        "answer": "TileSet 11 is ideal for ceramic, porcelain, and mosaic tiles up to 30×30 cm on interior walls and floors."
+      },
+      {
+        "question": "Can TileSet 11 be used in wet areas like bathrooms?",
+        "answer": "TileSet 11 is designed for dry interior areas. For wet areas like bathrooms and kitchens, we recommend TileSet 33 or TileSet 44."
+      }
+    ]
+  },
+  {
+    "id": "tileset-22",
+    "name": "Confast TileSet 22",
+    "tagline": "Type 2 High Performance Tile Adhesive",
+    "category": "Tile Adhesives",
+    "type": "C2T — Type 2 Tile Adhesive",
+    "image": "/images/products/tileset-22.png",
+    "heroImage": "/images/products/tileset-22.png",
+    "color": "#F39100",
+    "badge": "TYPE 2",
+    "shortDescription": "A high polymer-modified, cement-based wall and floor tile adhesive with improved adhesion strength for demanding applications.",
+    "fullDescription": "Confast TileSet 22 is a high-performance, polymer-modified, single-component tile adhesive classified as C2T (Type 2). It delivers enhanced adhesion, improved flexibility, and superior workability over standard C1 adhesives. Suitable for larger format tiles, vitrified surfaces, and moderately wet areas, TileSet 22 represents the next step in tiling quality.",
+    "features": [
+      "High polymer modification for superior bond",
+      "Improved flexibility over Type 1 adhesives",
+      "Good resistance to water after curing",
+      "Suitable for larger format tiles (up to 60×60 cm)",
+      "Non-sag vertical application",
+      "Extended open time",
+      "Meets IS 15477 C2T classification"
+    ],
+    "benefits": [
+      "Handles thermal movement stresses better",
+      "Suitable for interior wet and dry areas",
+      "Works on AAC block, cement plaster, concrete substrates",
+      "Reduces risk of tile debonding",
+      "Suitable for floor heating substrates"
+    ],
+    "applications": [
+      "Floor Tiling (large format)",
+      "Interior & Exterior Wall Tiles",
+      "Vitrified Tiles",
+      "Marble & Granite (light)",
+      "Moderately Wet Areas",
+      "Balconies & Terraces"
+    ],
+    "suitableFor": [
+      "Residential Bathrooms",
+      "Kitchen Walls & Floors",
+      "Commercial Buildings",
+      "Hospitals & Hotels"
+    ],
+    "coverage": "4–5 kg per sq.m at 6 mm notch",
+    "packSize": [
+      "20 kg Bag",
+      "40 kg Bag"
+    ],
+    "shelfLife": "12 Months",
+    "color_field": "Grey / White",
+    "technicalSpecs": [
+      {
+        "parameter": "Classification",
+        "value": "C2T (IS 15477)"
+      },
+      {
+        "parameter": "Tensile Adhesion Strength (28 days)",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Heat Resistance Adhesion",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Freeze-Thaw Adhesion",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Open Time",
+        "value": "≥ 20 minutes"
+      },
+      {
+        "parameter": "Pot Life",
+        "value": "~4 hours"
+      },
+      {
+        "parameter": "Shelf Life",
+        "value": "12 months in dry conditions"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What size tiles can TileSet 22 handle?",
+        "answer": "TileSet 22 is suitable for tiles up to 60×60 cm. For larger format tiles (80×80 cm and above), we recommend TileSet 33 or TileSet 44."
+      },
+      {
+        "question": "Is TileSet 22 suitable for swimming pools?",
+        "answer": "For swimming pools, we recommend the epoxy-based Epoxy 77 or TileSet 44 with additional waterproofing. TileSet 22 is not recommended for fully submerged applications."
+      }
+    ]
+  },
+  {
+    "id": "tileset-33",
+    "name": "Confast TileSet 33",
+    "tagline": "Type 3 Flexible High-Bond Tile Adhesive",
+    "category": "Tile Adhesives",
+    "type": "C2TE — Type 3 Tile Adhesive",
+    "image": "/images/products/tileset-33.png",
+    "heroImage": "/images/products/tileset-33.png",
+    "color": "#F39100",
+    "badge": "TYPE 3",
+    "shortDescription": "A highly polymer-modified, flexible wall and floor tile adhesive for demanding structural and wet area applications.",
+    "fullDescription": "Confast TileSet 33 is a premium, highly polymer-modified, single-component tile adhesive classified as C2TE (Type 3 with extended open time). Designed for professional and demanding applications, it offers outstanding flexibility, superior bond strength, and excellent resistance to water and thermal movement. It is the product of choice for large format tiles, exterior facades, and swimming pools.",
+    "features": [
+      "Highly polymer-modified for maximum flexibility",
+      "S1 deformability class — handles structural movement",
+      "Outstanding bond on vitrified and polished surfaces",
+      "Suitable for exterior facades and wet areas",
+      "Frost and heat resistant bond",
+      "Long open time for precise tile work",
+      "C2TE classification per IS 15477"
+    ],
+    "benefits": [
+      "Prevents tile cracking due to structural movement",
+      "Ideal for high-traffic commercial floors",
+      "Suitable for natural stone and heavy tiles",
+      "Reliable performance in extreme temperatures",
+      "Reduces maintenance and rework costs"
+    ],
+    "applications": [
+      "Large Format Tiles (80×80 cm and above)",
+      "Exterior Facades",
+      "Swimming Pools & Wet Areas",
+      "Heavy Stone & Marble",
+      "Underfloor Heated Surfaces",
+      "Industrial Floors"
+    ],
+    "suitableFor": [
+      "Swimming Pools",
+      "Hotels & Hospitals",
+      "Commercial Kitchens",
+      "Exterior Building Facades",
+      "Industrial Facilities"
+    ],
+    "coverage": "4.5–6 kg per sq.m at 8 mm notch",
+    "packSize": [
+      "20 kg Bag",
+      "40 kg Bag"
+    ],
+    "shelfLife": "12 Months",
+    "color_field": "Grey / White",
+    "technicalSpecs": [
+      {
+        "parameter": "Classification",
+        "value": "C2TE (IS 15477)"
+      },
+      {
+        "parameter": "Tensile Adhesion Strength (28 days)",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Heat Resistance Adhesion",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Water Immersion Adhesion",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Freeze-Thaw Adhesion",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Open Time",
+        "value": "≥ 30 minutes"
+      },
+      {
+        "parameter": "Shelf Life",
+        "value": "12 months in dry conditions"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can TileSet 33 be used on exterior facades?",
+        "answer": "Yes, TileSet 33 is specifically engineered for exterior facade applications where thermal movement and weather exposure demand a flexible, durable adhesive."
+      },
+      {
+        "question": "What is the maximum tile size TileSet 33 can support?",
+        "answer": "TileSet 33 can handle large format tiles up to 120×60 cm. For extremely heavy natural stone, additional mechanical fixing may be recommended."
+      }
+    ]
+  },
+  {
+    "id": "tileset-44",
+    "name": "Confast TileSet 44",
+    "tagline": "Type 3 S1 Super Flex Premium Tile Adhesive",
+    "category": "Tile Adhesives",
+    "type": "C2TES1 — Type 3 S1 Super Flex",
+    "image": "/images/products/tileset-44.png",
+    "heroImage": "/images/products/tileset-44.png",
+    "color": "#F39100",
+    "badge": "SUPER FLEX",
+    "shortDescription": "The most advanced, super-flexible premium tile adhesive with S1 deformability for the most demanding professional applications.",
+    "fullDescription": "Confast TileSet 44 is CONFAST's flagship tile adhesive — a C2TES1 classified, super-flexible, polymer-fortified adhesive that delivers unmatched bond strength and deformability. Engineered for the most challenging tiling scenarios including large-format porcelain slabs, exterior cladding, swimming pools, and thermally stressed substrates, TileSet 44 is the professional installer's ultimate choice.",
+    "features": [
+      "C2TES1 classification — highest performance grade",
+      "Super S1 deformability — maximum movement absorption",
+      "Outstanding adhesion on vitrified, porcelain, glass tiles",
+      "Suitable for all substrates including screed and render",
+      "Excellent freeze-thaw and heat resistance",
+      "Maximum open time for precise positioning",
+      "Suitable for underfloor heating systems",
+      "Meets IS 15477 and EN 12004"
+    ],
+    "benefits": [
+      "Ultimate protection against tile debonding",
+      "Handles heavy building movement with ease",
+      "Perfect for premium projects requiring guarantees",
+      "Reduces call-backs and maintenance",
+      "Trusted by leading architects and contractors"
+    ],
+    "applications": [
+      "Large Format Porcelain Slabs",
+      "Glass Tiles & Mosaic",
+      "Exterior Cladding & Curtain Walls",
+      "Swimming Pools",
+      "Underfloor Heated Substrates",
+      "Structural Waterproofing Membrane Applications"
+    ],
+    "suitableFor": [
+      "Premium Residential Projects",
+      "5-Star Hotels & Resorts",
+      "Hospitals & Clean Rooms",
+      "Infrastructure Projects",
+      "Airports & Metro Stations"
+    ],
+    "coverage": "5–7 kg per sq.m at 8–10 mm notch",
+    "packSize": [
+      "20 kg Bag",
+      "40 kg Bag"
+    ],
+    "shelfLife": "12 Months",
+    "color_field": "Grey / White",
+    "technicalSpecs": [
+      {
+        "parameter": "Classification",
+        "value": "C2TES1 (IS 15477 / EN 12004)"
+      },
+      {
+        "parameter": "Tensile Adhesion Strength (28 days)",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Deformability (S1)",
+        "value": "≥ 2.5 mm"
+      },
+      {
+        "parameter": "Heat Resistance Adhesion",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Water Immersion Adhesion",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Freeze-Thaw Adhesion",
+        "value": "≥ 1.0 N/mm²"
+      },
+      {
+        "parameter": "Open Time",
+        "value": "≥ 30 minutes"
+      },
+      {
+        "parameter": "Shelf Life",
+        "value": "12 months in dry conditions"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What makes TileSet 44 different from TileSet 33?",
+        "answer": "TileSet 44 carries the S1 deformability classification, meaning it can accommodate greater substrate movement (≥ 2.5 mm) without causing tile failure. It is the top-of-the-range product for premium and critical applications."
+      },
+      {
+        "question": "Is TileSet 44 suitable for glass mosaic tiles?",
+        "answer": "Yes, TileSet 44 white variant is specifically recommended for glass mosaic tiles due to its high bond strength and white colour that preserves tile aesthetics."
+      }
+    ]
+  },
+  {
+    "id": "epoxy-77",
+    "name": "Confast Epoxy 77",
+    "tagline": "3-Component Epoxy Grout — Internal & External",
+    "category": "Epoxy Grouts",
+    "type": "Epoxy Resin Grout",
+    "image": "/images/products/epoxy-77-alt.png",
+    "heroImage": "/images/products/epoxy-77-alt.png",
+    "color": "#F39100",
+    "badge": "PREMIUM EPOXY",
+    "shortDescription": "A three-component, epoxy resin-based premium grout for internal and external tile joints with exceptional chemical and stain resistance.",
+    "fullDescription": "Confast Epoxy 77 is a 3-component epoxy grout system comprising Epoxy Resin (Part A), Epoxy Hardener (Part B), and Fine Filler (Part C). It forms an extremely hard, dense, impervious joint that is highly resistant to chemicals, staining, and heavy traffic. Ideal for pharmaceutical, food processing, swimming pools, and any area requiring hygienic, easy-to-clean grout joints.",
+    "features": [
+      "3-component epoxy system for maximum performance",
+      "Exceptional chemical and acid resistance",
+      "Zero water absorption — completely waterproof joint",
+      "High compressive and tensile strength",
+      "Stain-proof, easy to clean surface",
+      "Wide colour range (14+ shades)",
+      "Suitable for joints from 3–15 mm",
+      "UV stable — no yellowing"
+    ],
+    "benefits": [
+      "Hygienic — bacteria and mould resistant joints",
+      "Ideal for sterile and clean-room environments",
+      "Permanent colour stability — no fading",
+      "Withstands heavy commercial foot traffic",
+      "Resistant to cleaning chemicals and disinfectants",
+      "Long-lasting — reduces maintenance frequency"
+    ],
+    "applications": [
+      "Swimming Pools & Water Features",
+      "Pharmaceutical & Food Processing Plants",
+      "Commercial Kitchens & Restaurants",
+      "Hospitals & Laboratories",
+      "Heavy Traffic Commercial Floors",
+      "Chemical Plant Flooring"
+    ],
+    "suitableFor": [
+      "Swimming Pools",
+      "Hospitals & Pharma",
+      "Food & Beverage Industries",
+      "Chemical Plants",
+      "Premium Commercial Spaces"
+    ],
+    "coverage": "Approx. 700–900 gm per sq.m for 3 mm joint",
+    "packSize": [
+      "2 kg Kit",
+      "5 kg Kit",
+      "10 kg Kit"
+    ],
+    "shelfLife": "12 Months",
+    "color_field": "14 Standard Shades",
+    "technicalSpecs": [
+      {
+        "parameter": "Type",
+        "value": "3-Component Epoxy Grout"
+      },
+      {
+        "parameter": "Compressive Strength (28 days)",
+        "value": "≥ 45 N/mm²"
+      },
+      {
+        "parameter": "Flexural Strength (28 days)",
+        "value": "≥ 30 N/mm²"
+      },
+      {
+        "parameter": "Water Absorption",
+        "value": "< 0.1%"
+      },
+      {
+        "parameter": "Chemical Resistance",
+        "value": "Excellent (acids, alkalis, solvents)"
+      },
+      {
+        "parameter": "Joint Width",
+        "value": "3–15 mm"
+      },
+      {
+        "parameter": "Pot Life",
+        "value": "~45 minutes at 25°C"
+      },
+      {
+        "parameter": "Shelf Life",
+        "value": "12 months"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is Epoxy 77 suitable for swimming pools?",
+        "answer": "Yes, Confast Epoxy 77 is one of the best choices for swimming pools due to its zero water absorption, chemical resistance, and permanent colour stability."
+      },
+      {
+        "question": "How many colours are available in Epoxy 77?",
+        "answer": "Epoxy 77 is available in 14 standard shades. Custom shades may be available for bulk orders — please contact our technical team."
+      },
+      {
+        "question": "What is the pot life of Epoxy 77?",
+        "answer": "The pot life is approximately 45 minutes at 25°C. In higher temperatures, the pot life reduces. It is advisable to mix small quantities for manageable working time."
+      }
+    ]
+  },
+  {
+    "id": "sbr-latex-plus",
+    "name": "Confast SBR Latex+",
+    "tagline": "Premium SBR Polymer for Repair & Bonding",
+    "category": "Bonding Agents",
+    "type": "SBR Latex Bonding Agent",
+    "image": "/images/products/sbr-latex-plus.png",
+    "heroImage": "/images/products/sbr-latex-plus.png",
+    "color": "#F39100",
+    "badge": "MULTI-PURPOSE",
+    "shortDescription": "A premium SBR (Styrene Butadiene Rubber) latex bonding additive that dramatically improves the properties of render, screed, mortar, and repair mixes.",
+    "fullDescription": "Confast SBR Latex+ is a specially modified, milky-white SBR polymer emulsion designed to be added to cement-based mortars, renders, screeds, and repair mixes. It significantly enhances bond strength, flexibility, durability, and water resistance of the mix. Acting as both a bonding agent (slurry coat) and an admixture, SBR Latex+ is a versatile construction chemical trusted by waterproofing specialists, structural repair contractors, and civil engineers.",
+    "features": [
+      "High-quality SBR polymer formulation",
+      "Dramatically improves bond strength of mortars",
+      "Increases flexibility and crack resistance",
+      "Excellent waterproofing properties when used as slurry",
+      "Reduces permeability of cement mixes",
+      "Acts as bonding bridge between old and new concrete",
+      "Improves durability and chemical resistance",
+      "Compatible with all cement and sand mixes"
+    ],
+    "benefits": [
+      "Multi-purpose: bonding agent + admixture in one",
+      "Reduces risk of delamination in repairs",
+      "Extends service life of repaired structures",
+      "Cost-effective waterproofing solution",
+      "Easy to use — no special tools required",
+      "Widely used by waterproofing contractors"
+    ],
+    "applications": [
+      "Concrete & Masonry Repair",
+      "Waterproof Rendering & Plastering",
+      "Bonding New Concrete to Old",
+      "Terrace & Roof Waterproofing Screeds",
+      "Flooring Screeds & Levelling",
+      "Swimming Pool Repairs",
+      "Basement Waterproofing"
+    ],
+    "suitableFor": [
+      "Structural Repair Works",
+      "Waterproofing Contractors",
+      "Basement & Terrace Waterproofing",
+      "Swimming Pool Construction & Repair",
+      "Infrastructure Rehabilitation"
+    ],
+    "coverage": "0.2–0.3 litres per sq.m as slurry coat",
+    "packSize": [
+      "1 Litre",
+      "5 Litre",
+      "20 Litre",
+      "200 Litre"
+    ],
+    "shelfLife": "12 Months",
+    "color_field": "Milky White (dries clear)",
+    "technicalSpecs": [
+      {
+        "parameter": "Type",
+        "value": "SBR Latex Emulsion"
+      },
+      {
+        "parameter": "Solid Content",
+        "value": "~47%"
+      },
+      {
+        "parameter": "pH",
+        "value": "8–9"
+      },
+      {
+        "parameter": "Mixing Ratio (with cement mortar)",
+        "value": "1 part SBR : 3–4 parts water"
+      },
+      {
+        "parameter": "Bond Strength Improvement",
+        "value": "Up to 3× vs. plain cement"
+      },
+      {
+        "parameter": "Water Resistance",
+        "value": "Excellent"
+      },
+      {
+        "parameter": "Shelf Life",
+        "value": "12 months, protected from freezing"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can SBR Latex+ be used for waterproofing terraces?",
+        "answer": "Yes, SBR Latex+ mixed with cement as a slurry coat is a proven method for terrace and roof waterproofing. For critical applications, consult our technical team for a complete system specification."
+      },
+      {
+        "question": "What is the mixing ratio for using it as a bonding agent?",
+        "answer": "For a bonding slurry, mix 1 part SBR Latex+ with 1 part cement and apply as a slurry coat. For mortar modification, add SBR at 10–15% of the water content."
+      }
+    ]
+  }
+]
