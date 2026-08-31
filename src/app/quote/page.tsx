@@ -286,7 +286,7 @@ export default function QuotePage() {
                     We respond within one working day. For urgent site
                     requirements,{" "}
                     <a
-                      href="tel:+91XXXXXXXXXX"
+                      href="tel:+917392949294"
                       className="link-underline text-[#F39100]"
                     >
                       call the technical desk

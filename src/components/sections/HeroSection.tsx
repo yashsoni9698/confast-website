@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Logo } from "@/components/ui/Logo";
 import { useReducedMotion } from "@/lib/useMediaQuery";
 
 if (typeof window !== "undefined") {
@@ -178,10 +177,6 @@ export function HeroSection() {
         data-hero-content
         className="shell relative z-10 flex flex-col items-center pt-28 pb-28 text-center sm:pt-32 sm:pb-36 md:pb-32"
       >
-        <div className="hero-rise" style={{ animationDelay: "0.1s" }}>
-          <Logo tone="invert" size="lg" />
-        </div>
-
         <p
           className="hero-rise eyebrow mt-8 text-white/80"
           style={{ animationDelay: "0.3s" }}

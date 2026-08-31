@@ -364,7 +364,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   Request a Quote
                 </Link>
                 <a
-                  href="tel:+91XXXXXXXXXX"
+                  href="tel:+917392949294"
                   className="btn border-white/40 text-white hover:bg-white hover:text-[#1A1A18]"
                 >
                   Call Technical Desk

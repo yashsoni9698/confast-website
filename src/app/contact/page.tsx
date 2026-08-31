@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 const channels = [
   {
     label: "Phone",
-    value: "+91 XXXX XXXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    value: "+91 73 9294 9294",
+    href: "tel:+917392949294",
     note: "Mon–Sat, 9 AM – 6 PM",
   },
   {
@@ -24,20 +24,19 @@ const channels = [
   {
     label: "WhatsApp",
     value: "Chat with the team",
-    href: "https://wa.me/91XXXXXXXXXX",
+    href: "https://wa.me/917392949294",
     note: "Fastest route for site queries",
   },
   {
     label: "Technical Desk",
-    value: "+91 XXXX XXXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    value: "+91 73 9294 9294",
+    href: "tel:+917392949294",
     note: "Product selection & specification",
   },
 ];
 
 const hours = [
-  { day: "Monday – Friday", time: "9:00 AM – 6:00 PM" },
-  { day: "Saturday", time: "9:00 AM – 2:00 PM" },
+  { day: "Monday – Saturday", time: "9:00 AM – 6:00 PM" },
   { day: "Sunday", time: "Closed" },
 ];
 
@@ -230,7 +229,11 @@ export default function ContactPage() {
                 <p className="mt-6 text-base font-normal leading-relaxed text-muted">
                   CONFAST Chemicals Pvt. Ltd.
                   <br />
-                  India
+                  Behind Ultratech RMC Plant,
+                  <br />
+                  Near Hindustan Spun Pipe, NH48,
+                  <br />
+                  Narsanda, Nadiad 387345
                 </p>
                 <a
                   href="https://www.confastchemicals.com"
@@ -247,7 +250,7 @@ export default function ContactPage() {
                   a photo of the substrate — it is the fastest way to get an answer.
                 </p>
                 <a
-                  href="https://wa.me/91XXXXXXXXXX"
+                  href="https://wa.me/917392949294"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-line-invert mt-8 w-full"

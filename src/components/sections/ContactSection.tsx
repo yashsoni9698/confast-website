@@ -5,13 +5,13 @@ import { FadeUp } from "@/components/ui/Reveal";
 import { SectionHead } from "@/components/ui/SectionHead";
 
 const channels = [
-  { label: "Phone", value: "+91 XXXX XXXXXX", href: "tel:+91XXXXXXXXXX" },
+  { label: "Phone", value: "+91 73 9294 9294", href: "tel:+917392949294" },
   {
     label: "Email",
     value: "info@confastchemicals.com",
     href: "mailto:info@confastchemicals.com",
   },
-  { label: "WhatsApp", value: "Message the team", href: "https://wa.me/91XXXXXXXXXX" },
+  { label: "WhatsApp", value: "Message the team", href: "https://wa.me/917392949294" },
 ];
 
 const subjects = [

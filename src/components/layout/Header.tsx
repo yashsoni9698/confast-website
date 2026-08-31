@@ -177,13 +177,17 @@ export function Header() {
           hidden && !open ? "-translate-y-full" : "translate-y-0"
         )}
       >
-        <div className="shell flex items-center justify-between gap-6">
-          <Link href="/" aria-label="CONFAST home" className="relative z-10">
+        <div className="shell flex items-center gap-6">
+          <Link
+            href="/"
+            aria-label="CONFAST home"
+            className="relative z-10 -ml-6 sm:-ml-8 md:-ml-12 lg:-ml-16"
+          >
             <Logo tone={invert ? "invert" : "ink"} />
           </Link>
 
           {/* Desktop nav */}
-          <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+          <nav aria-label="Primary" className="ml-auto hidden items-center gap-8 lg:flex">
             {nav.map((item) => {
               const isProducts = item.href === "/products";
               const isActive =
@@ -292,7 +296,7 @@ export function Header() {
             })}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="ml-auto flex items-center gap-2 lg:ml-8">
             {/* CTA — kept visible from tablet up instead of being buried in
                 the menu on every screen below 1024px */}
             <Link
@@ -419,10 +423,10 @@ export function Header() {
               </p>
               <div data-menu-aside className="space-y-3">
                 <a
-                  href="tel:+91XXXXXXXXXX"
+                  href="tel:+917392949294"
                   className="block text-lg text-white transition-colors hover:text-[#F39100]"
                 >
-                  +91 XXXX XXXXXX
+                  +91 73 9294 9294
                 </a>
                 <a
                   href="mailto:info@confastchemicals.com"

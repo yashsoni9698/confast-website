@@ -93,8 +93,15 @@ export default function RootLayout({
               logo: "https://www.confastchemicals.com/images/brand/logomark.png",
               description:
                 "Manufacturer of premium construction chemicals — tile adhesives, epoxy grouts, block fix mortar, and SBR latex.",
+              telephone: "+91-73-9294-9294",
+              email: "info@confastchemicals.com",
               address: {
                 "@type": "PostalAddress",
+                streetAddress:
+                  "Behind Ultratech RMC Plant, Near Hindustan Spun Pipe, NH48, Narsanda",
+                addressLocality: "Nadiad",
+                addressRegion: "Gujarat",
+                postalCode: "387345",
                 addressCountry: "IN",
               },
               sameAs: [

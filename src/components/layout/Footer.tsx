@@ -82,10 +82,10 @@ export function Footer() {
             <p className="eyebrow text-white/60">Get in touch</p>
             <div className="mt-7 space-y-5">
               <a
-                href="tel:+91XXXXXXXXXX"
+                href="tel:+917392949294"
                 className="block text-lg font-normal transition-colors hover:text-[#F39100]"
               >
-                +91 XXXX XXXXXX
+                +91 73 9294 9294
               </a>
               <a
                 href="mailto:info@confastchemicals.com"
@@ -93,19 +93,24 @@ export function Footer() {
               >
                 info@confastchemicals.com
               </a>
+              <p className="text-sm font-normal leading-relaxed text-white/65">
+                Behind Ultratech RMC Plant,
+                <br />
+                Near Hindustan Spun Pipe, NH48,
+                <br />
+                Narsanda, Nadiad 387345
+              </p>
               <p className="text-sm font-normal text-white/65">
                 www.confastchemicals.com
-                <br />
-                India
               </p>
             </div>
 
             <div className="mt-8 border-t border-white/10 pt-6">
               <p className="eyebrow text-white/60">Business hours</p>
               <p className="mt-3 text-sm font-normal text-white/75">
-                Mon – Fri · 9:00 – 18:00
+                Mon – Sat · 9:00 – 18:00
                 <br />
-                Sat · 9:00 – 14:00
+                Sun · Closed
               </p>
             </div>
           </div>

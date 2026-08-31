@@ -46,7 +46,7 @@ export function FloatingActions() {
       </button>
 
       <a
-        href="https://wa.me/91XXXXXXXXXX?text=Hello%20CONFAST%2C%20I%27m%20interested%20in%20your%20construction%20chemicals."
+        href="https://wa.me/917392949294?text=Hello%20CONFAST%2C%20I%27m%20interested%20in%20your%20construction%20chemicals."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with CONFAST on WhatsApp"
@@ -63,7 +63,7 @@ export function FloatingActions() {
       </a>
 
       <a
-        href="tel:+91XXXXXXXXXX"
+        href="tel:+917392949294"
         aria-label="Call the CONFAST technical desk"
         className={cn(base, "bg-[#F39100] text-white hover:bg-[#EF7800]")}
       >

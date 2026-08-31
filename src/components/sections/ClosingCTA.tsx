@@ -61,7 +61,7 @@ export function ClosingCTA() {
           className="mt-16 grid gap-8 border-t border-white/20 pt-10 sm:grid-cols-2 sm:gap-px"
         >
           {[
-            { label: "Technical desk", value: "+91 XXXX XXXXXX", href: "tel:+91XXXXXXXXXX" },
+            { label: "Technical desk", value: "+91 73 9294 9294", href: "tel:+917392949294" },
             {
               label: "Email",
               value: "info@confastchemicals.com",

@@ -1,40 +1,35 @@
 import React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
+import logoWhite from "@/../public/images/brand/logoWhite.png";
+
 /* ────────────────────────────────────────────
-   LogoMark — vector rebuild of the CONFAST
-   chevron so it stays crisp on any surface.
-   (The bundled logomark.png is a flat scan
-   crop with no transparency.)
+   LogoMark — the standalone CONFAST logo image.
+   Uses logoWhite everywhere for now. The static
+   import supplies the intrinsic width/height, so
+   setting a height in CSS (with w-auto) keeps the
+   aspect ratio correct and avoids layout shift.
 ──────────────────────────────────────────── */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 72 56"
-      fill="none"
-      aria-hidden="true"
-      className={cn("text-[#F39100]", className)}
-    >
-      {/* outer chevron */}
-      <path
-        d="M36 2 L70 44 L55.5 44 L36 20 L16.5 44 L2 44 Z"
-        fill="currentColor"
-      />
-      {/* inner chevron */}
-      <path
-        d="M36 30 L47 44 L36 44 L25 44 Z"
-        fill="currentColor"
-        opacity="0.55"
-      />
-    </svg>
+    <Image
+      src={logoWhite}
+      alt="CONFAST"
+      priority
+      sizes="(max-width: 640px) 160px, 220px"
+      className={cn("w-auto", className)}
+    />
   );
 }
 
 /* ────────────────────────────────────────────
-   Logo — mark plus wordmark lockup.
+   Logo — brand lockup. Renders the logoWhite
+   image at the requested size. The `tone` prop
+   is accepted for API compatibility but both
+   tones currently use the white logo.
 ──────────────────────────────────────────── */
 export function Logo({
-  tone = "ink",
   size = "sm",
   className,
 }: {
@@ -45,35 +40,14 @@ export function Logo({
   const lg = size === "lg";
 
   return (
-    <span
-      className={cn(
-        "flex items-center leading-none",
-        lg ? "gap-4" : "gap-2.5 sm:gap-3",
-        className
-      )}
-    >
-      <LogoMark className={lg ? "h-9 w-auto sm:h-11" : "h-5 w-auto sm:h-[1.4rem]"} />
-      <span className="flex items-baseline gap-[0.3rem]">
-        <span
-          className={cn(
-            "font-medium transition-colors duration-500",
-            lg
-              ? "text-[1.6rem] tracking-[0.3em] sm:text-[2rem]"
-              : "text-[1.05rem] tracking-[0.2em] sm:text-[1.15rem]",
-            tone === "invert" ? "text-white" : "text-[#1A1A18]"
-          )}
-        >
-          CONFAST
-        </span>
-        <span
-          className={cn(
-            "-translate-y-1.5 text-[0.5rem] font-normal tracking-[0.1em] transition-colors duration-500",
-            tone === "invert" ? "text-white/45" : "text-[#868786]"
-          )}
-        >
-          TM
-        </span>
-      </span>
+    <span className={cn("flex items-center leading-none", className)}>
+      <LogoMark
+        className={
+          lg
+            ? "h-[6.75rem] sm:h-[8.25rem]"
+            : "h-[4.875rem] sm:h-[5.46rem]"
+        }
+      />
     </span>
   );
 }
