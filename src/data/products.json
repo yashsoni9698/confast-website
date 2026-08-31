@@ -7,6 +7,13 @@
     "type": "Cementitious Mortar",
     "image": "/images/products/block-fix.png",
     "heroImage": "/images/products/block-fix.png",
+    "gallery": [
+      "/images/products/block-fix.png",
+      "/images/brochure/product-overview.png",
+      "/images/brochure/page-03.jpg",
+      "/images/brochure/page-04.jpg",
+      "/images/brochure/about-spread.png"
+    ],
     "color": "#F39100",
     "badge": "BESTSELLER",
     "shortDescription": "A ready-to-mix, self-curing cementitious mortar specially designed for mounting various blocks, bricks and masonry units with superior bond strength.",
@@ -102,6 +109,13 @@
     "type": "C1TE — Type 1 Tile Adhesive",
     "image": "/images/products/tileset-11.png",
     "heroImage": "/images/products/tileset-11.png",
+    "gallery": [
+      "/images/products/tileset-11.png",
+      "/images/brochure/product-overview.png",
+      "/images/brochure/page-05.jpg",
+      "/images/brochure/page-06.jpg",
+      "/images/brochure/page-07.jpg"
+    ],
     "color": "#F39100",
     "badge": "TYPE 1",
     "shortDescription": "A single component, professional cement-based powder adhesive for fixing wall and floor tiles in dry interior areas.",
@@ -192,6 +206,13 @@
     "type": "C2T — Type 2 Tile Adhesive",
     "image": "/images/products/tileset-22.png",
     "heroImage": "/images/products/tileset-22.png",
+    "gallery": [
+      "/images/products/tileset-22.png",
+      "/images/brochure/product-overview.png",
+      "/images/brochure/page-06.jpg",
+      "/images/brochure/page-07.jpg",
+      "/images/brochure/page-08.jpg"
+    ],
     "color": "#F39100",
     "badge": "TYPE 2",
     "shortDescription": "A high polymer-modified, cement-based wall and floor tile adhesive with improved adhesion strength for demanding applications.",
@@ -282,6 +303,13 @@
     "type": "C2TE — Type 3 Tile Adhesive",
     "image": "/images/products/tileset-33.png",
     "heroImage": "/images/products/tileset-33.png",
+    "gallery": [
+      "/images/products/tileset-33.png",
+      "/images/brochure/product-overview.png",
+      "/images/brochure/page-07.jpg",
+      "/images/brochure/page-08.jpg",
+      "/images/brochure/page-09.jpg"
+    ],
     "color": "#F39100",
     "badge": "TYPE 3",
     "shortDescription": "A highly polymer-modified, flexible wall and floor tile adhesive for demanding structural and wet area applications.",
@@ -373,6 +401,13 @@
     "type": "C2TES1 — Type 3 S1 Super Flex",
     "image": "/images/products/tileset-44.png",
     "heroImage": "/images/products/tileset-44.png",
+    "gallery": [
+      "/images/products/tileset-44.png",
+      "/images/brochure/product-overview.png",
+      "/images/brochure/page-08.jpg",
+      "/images/brochure/page-09.jpg",
+      "/images/brochure/page-10.jpg"
+    ],
     "color": "#F39100",
     "badge": "SUPER FLEX",
     "shortDescription": "The most advanced, super-flexible premium tile adhesive with S1 deformability for the most demanding professional applications.",
@@ -469,6 +504,13 @@
     "type": "Epoxy Resin Grout",
     "image": "/images/products/epoxy-77-alt.png",
     "heroImage": "/images/products/epoxy-77-alt.png",
+    "gallery": [
+      "/images/products/epoxy-77-alt.png",
+      "/images/products/epoxy-77.png",
+      "/images/brochure/epoxy-shade-chart.png",
+      "/images/brochure/page-10.jpg",
+      "/images/brochure/page-11.jpg"
+    ],
     "color": "#F39100",
     "badge": "PREMIUM EPOXY",
     "shortDescription": "A three-component, epoxy resin-based premium grout for internal and external tile joints with exceptional chemical and stain resistance.",
@@ -571,6 +613,13 @@
     "type": "SBR Latex Bonding Agent",
     "image": "/images/products/sbr-latex-plus.png",
     "heroImage": "/images/products/sbr-latex-plus.png",
+    "gallery": [
+      "/images/products/sbr-latex-plus.png",
+      "/images/products/sbr-latex-plus-alt.png",
+      "/images/brochure/product-overview.png",
+      "/images/brochure/page-11.jpg",
+      "/images/brochure/page-12.jpg"
+    ],
     "color": "#F39100",
     "badge": "MULTI-PURPOSE",
     "shortDescription": "A premium SBR (Styrene Butadiene Rubber) latex bonding additive that dramatically improves the properties of render, screed, mortar, and repair mixes.",

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { FadeUp, Reveal } from "@/components/ui/Reveal";
+import { ProductGallery } from "@/components/ui/ProductGallery";
 import productsData from "@/data/products.json";
 import type { Product } from "@/types";
 
@@ -83,8 +84,20 @@ export default async function ProductDetailPage({ params }: Props) {
             </nav>
           </FadeUp>
 
-          <div className="mt-14 grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
-            {/* copy */}
+          <div className="mt-14 grid items-center gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
+            {/* pack shot gallery — left */}
+            <FadeUp delay={0.1}>
+              <ProductGallery
+                images={
+                  product.gallery && product.gallery.length > 0
+                    ? product.gallery
+                    : [product.heroImage || product.image]
+                }
+                alt={product.name}
+              />
+            </FadeUp>
+
+            {/* copy — right */}
             <div>
               <FadeUp y={14}>
                 <div className="flex flex-wrap items-center gap-3">
@@ -120,20 +133,6 @@ export default async function ProductDetailPage({ params }: Props) {
                 </div>
               </FadeUp>
             </div>
-
-            {/* pack shot */}
-            <FadeUp delay={0.1}>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] bg-[#F7F6F3]">
-                <Image
-                  src={product.heroImage || product.image}
-                  alt={product.name}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-contain p-10 sm:p-16"
-                />
-              </div>
-            </FadeUp>
           </div>
         </div>
       </section>
@@ -185,16 +184,16 @@ export default async function ProductDetailPage({ params }: Props) {
               </p>
             </div>
             <div className="mt-8 hairline" />
-            <FadeUp stagger={0.06} className="grid sm:grid-cols-2">
+            <FadeUp stagger={0.06} className="grid sm:grid-cols-2 sm:gap-x-16">
               {product.features.map((f, i) => (
                 <div
                   key={f}
-                  className="flex gap-5 border-b border-[#1A1A18]/10 py-6 sm:px-8 sm:first:pl-0 sm:[&:nth-child(odd)]:pl-0"
+                  className="flex gap-5 border-b border-[#1A1A18]/10 py-7 sm:first:pl-0 sm:[&:nth-child(odd)]:pl-0"
                 >
-                  <span className="numeral eyebrow pt-1 text-[#F39100]">
+                  <span className="numeral pt-0.5 text-lg font-semibold leading-none text-[#F39100]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-sm font-normal leading-relaxed text-muted">
+                  <p className="text-lg font-normal leading-relaxed text-[#1A1A18]">
                     {f}
                   </p>
                 </div>
@@ -230,50 +229,109 @@ export default async function ProductDetailPage({ params }: Props) {
       </section>
 
       {/* ══════════ APPLICATIONS ══════════ */}
-      <section className="bg-[#101010]">
-        <div className="band shell">
-          <div className="grid gap-14 lg:grid-cols-2 lg:gap-24">
+      <section className="relative overflow-hidden bg-[#101010]">
+        <div className="blueprint-invert absolute inset-0 opacity-40" />
+        <div
+          className="pointer-events-none absolute -left-40 bottom-0 h-[34rem] w-[34rem] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(243,145,0,0.16) 0%, transparent 68%)",
+          }}
+        />
+
+        <div className="band shell relative">
+          <div className="grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
+            {/* ── left column: heading + applications grid ── */}
             <div>
-              <FadeUp>
-                <div className="flex items-center gap-3">
-                  <span className="tick" />
-                  <p className="eyebrow text-white/70">Applications</p>
-                </div>
-              </FadeUp>
-              <h2 className="display display-md mt-7 text-white">
-                <Reveal>Where it</Reveal>
-                <Reveal delay={0.08}>
-                  <span className="text-[#F39100]">gets used.</span>
-                </Reveal>
-              </h2>
-              <FadeUp stagger={0.06} className="mt-10">
-                {product.applications.map((a) => (
-                  <div
-                    key={a}
-                    className="flex items-center gap-4 border-b border-white/10 py-4"
-                  >
+              {/* ── heading row ── */}
+              <div className="max-w-xl">
+                <FadeUp>
+                  <div className="flex items-center gap-3">
                     <span className="tick" />
-                    <p className="text-sm font-normal text-white/80">{a}</p>
+                    <p className="eyebrow text-white/70">Applications</p>
                   </div>
-                ))}
+                </FadeUp>
+                <h2 className="display display-md mt-7 text-white">
+                  <Reveal>
+                    Where it <span className="text-[#F39100]">gets used.</span>
+                  </Reveal>
+                </h2>
+                <FadeUp delay={0.1}>
+                  <p className="mt-6 max-w-md text-sm font-normal leading-relaxed text-white/55">
+                    Field-proven across {product.applications.length} application
+                    types and specified for the environments below.
+                  </p>
+                </FadeUp>
+              </div>
+
+              {/* ── applications — numbered grid ── */}
+              <FadeUp stagger={0.05} className="mt-14">
+                <div className="hairline-invert" />
+                <div className="grid auto-rows-fr sm:grid-cols-2 sm:gap-x-10">
+                  {product.applications.map((a, i) => (
+                    <div
+                      key={a}
+                      className="group flex min-h-[4.5rem] items-center gap-4 border-b border-white/10 py-5 transition-colors duration-300 hover:border-[#F39100]/40"
+                    >
+                      <span className="numeral shrink-0 text-lg font-semibold tabular-nums tracking-tight text-[#F39100] sm:text-xl">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <p className="text-sm font-normal leading-snug text-white/80 transition-colors duration-300 group-hover:text-white">
+                        {a}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </FadeUp>
             </div>
 
-            <div className="lg:pt-24">
-              <FadeUp>
-                <p className="eyebrow text-white/70">Suitable For</p>
-              </FadeUp>
-              <FadeUp stagger={0.06} className="mt-8 flex flex-wrap gap-2.5">
-                {product.suitableFor.map((s) => (
-                  <span
-                    key={s}
-                    className="border border-white/12 px-4 py-2.5 text-sm font-normal text-white/75"
+            {/* ── suitable for — bordered panel ── */}
+            <FadeUp delay={0.12} className="h-full">
+              <div className="flex h-full flex-col justify-center rounded-[1.5rem] border border-white/12 bg-white/[0.03] p-8 backdrop-blur-sm sm:p-10">
+                <div className="flex items-center gap-3">
+                  <span className="tick" />
+                  <p className="eyebrow text-white/70">Suitable For</p>
+                </div>
+                <div className="mt-7 flex flex-wrap gap-2.5">
+                  {product.suitableFor.map((s) => (
+                    <span
+                      key={s}
+                      className="rounded-full border border-white/15 bg-white/[0.02] px-4 py-2.5 text-sm font-normal text-white/75 transition-all duration-300 hover:border-[#F39100]/60 hover:bg-[#F39100]/10 hover:text-white"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-9 h-px w-full bg-white/10" />
+
+                <p className="mt-7 text-sm font-normal leading-relaxed text-white/55">
+                  Not sure if it fits your project? Our technical desk will
+                  confirm suitability for your site conditions.
+                </p>
+                <Link
+                  href="/contact"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#F39100] transition-colors duration-300 hover:text-white"
+                >
+                  Talk to a specialist
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    aria-hidden="true"
                   >
-                    {s}
-                  </span>
-                ))}
-              </FadeUp>
-            </div>
+                    <path
+                      d="M1 7h12M8 2l5 5-5 5"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -312,7 +370,7 @@ export default async function ProductDetailPage({ params }: Props) {
           {/* ── faqs ── */}
           <div className="mt-24">
             <h2 className="display display-md text-[#1A1A18]">
-              <Reveal>Questions</Reveal>
+              <Reveal>Frequently Asked Questions</Reveal>
             </h2>
             <div className="mt-10 hairline" />
             <FadeUp stagger={0.08}>
@@ -322,16 +380,24 @@ export default async function ProductDetailPage({ params }: Props) {
                   className="group border-b border-[#1A1A18]/10 py-6"
                 >
                   <summary className="flex cursor-pointer list-none items-start gap-5 [&::-webkit-details-marker]:hidden">
-                    <span className="numeral eyebrow pt-1.5 text-[#F39100]">
+                    <span className="numeral pt-0.5 text-2xl font-semibold leading-none text-[#F39100] sm:text-3xl">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="display flex-1 text-lg text-[#1A1A18] transition-colors duration-300 group-open:text-[#F39100] sm:text-xl">
                       {faq.question}
                     </span>
-                    <span className="relative mt-2 h-3 w-3 shrink-0">
-                      <span className="absolute left-0 top-1/2 h-px w-3 bg-[#1A1A18]" />
-                      <span className="absolute left-1/2 top-0 h-3 w-px bg-[#1A1A18] transition-transform duration-400 group-open:scale-y-0" />
-                    </span>
+                    <svg
+                      className="mt-2 h-4 w-4 shrink-0 text-[#1A1A18] transition-transform duration-400 group-open:rotate-180 group-open:text-[#F39100]"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
                   </summary>
                   <p className="mt-5 max-w-3xl pl-11 text-sm font-normal leading-relaxed text-muted">
                     {faq.answer}

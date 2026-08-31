@@ -74,22 +74,22 @@ export function Header() {
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const [mega, setMega] = useState(false);
-  const lastY = useRef(0);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const megaRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
-  /* Hide on scroll down, reveal on scroll up. Throttled to one read per
-     frame so the listener never lands in the middle of a paint. */
+  /* Hide the header once the page is scrolled past the threshold and keep it
+     hidden while scrolling — it does not reappear on scroll-up. It only comes
+     back when the user returns near the top of the page. Throttled to one read
+     per frame so the listener never lands in the middle of a paint. */
   useEffect(() => {
     let frame = 0;
     const measure = () => {
       frame = 0;
       const y = window.scrollY;
       setScrolled(y > 24);
-      setHidden(y > 420 && y > lastY.current + 4);
-      lastY.current = y;
+      setHidden(y > 420);
     };
     const onScroll = () => {
       if (frame) return;

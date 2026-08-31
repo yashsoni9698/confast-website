@@ -16,6 +16,9 @@ export interface Product {
   type: string;
   image: string;
   heroImage: string;
+  /** Additional images shown in the product detail gallery. Optional —
+      falls back to [image] when absent. */
+  gallery?: string[];
   color: string;
   badge: string;
   shortDescription: string;

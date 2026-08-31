@@ -16,6 +16,7 @@ const VISIBLE_CARDS = 4;
 
 export function ProductsGrid() {
   const sectionRef = useRef<HTMLElement>(null);
+  const pinRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const sliderAreaRef = useRef<HTMLDivElement>(null);
@@ -46,8 +47,9 @@ export function ProductsGrid() {
     if (isMobile || !cardWidth) return;
 
     const section = sectionRef.current;
+    const pinEl = pinRef.current;
     const track = trackRef.current;
-    if (!section || !track) return;
+    if (!section || !pinEl || !track) return;
 
     const getScrollDistance = () => {
       return track.scrollWidth - (sliderAreaRef.current?.offsetWidth || window.innerWidth);
@@ -57,7 +59,17 @@ export function ProductsGrid() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          pin: true,
+          // Pin the INNER wrapper, not the outer <section>. When GSAP pins an
+          // element it wraps it in a ".pin-spacer" <div> (this happens for
+          // every pinType — pinType only controls fixed vs. transform
+          // positioning, not the wrapping). If we pinned the <section>, that
+          // reparenting would move the section out of the node React rendered
+          // it into, so on route navigation React's removeChild would target
+          // the wrong parent and throw "The node to be removed is not a child
+          // of this node". Pinning an inner div keeps the pin-spacer inside
+          // the <section>, which stays a stable child of React's tree.
+          pin: pinEl,
+          pinType: "transform",
           scrub: 1,
           end: () => `+=${getScrollDistance()}`,
           invalidateOnRefresh: true,
@@ -75,7 +87,11 @@ export function ProductsGrid() {
       });
     }, section);
 
-    return () => ctx.revert();
+    return () => {
+      // Revert synchronously so GSAP restores the DOM to its original
+      // structure BEFORE React unmounts this subtree on navigation.
+      ctx.revert();
+    };
   }, [cardWidth, isMobile]);
 
   /* ── Mobile: vertical scrollable grid ── */
@@ -160,9 +176,9 @@ export function ProductsGrid() {
     <section
       ref={sectionRef}
       id="products"
-      className="relative overflow-hidden bg-[#F0F0F0]"
-      style={{ height: "100vh" }}
+      className="relative bg-[#F0F0F0]"
     >
+      <div ref={pinRef} className="relative h-screen overflow-hidden">
       <div className="flex h-full flex-col px-5 py-12 sm:px-8 sm:py-14 md:px-12 lg:px-16 xl:px-20">
         {/* ── Header ── */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -253,6 +269,7 @@ export function ProductsGrid() {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

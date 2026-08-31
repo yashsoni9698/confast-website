@@ -84,11 +84,11 @@ export function ProjectShowcase() {
   useEffect(() => {
     function update() {
       const w = window.innerWidth;
-      /* Mirror the .shell column: max-width 1200px minus the responsive
+      /* Mirror the .shell column: max-width 1440px minus the responsive
          side padding, so the grid fills the same centred column as every
          other section instead of its own width. */
       const pad = w >= 1024 ? 128 : w >= 768 ? 96 : w >= 480 ? 64 : 48;
-      const containerW = Math.min(w, 1200) - pad;
+      const containerW = Math.min(w, 1440) - pad;
       if (w < 640) {
         setCols(2);
         setGapSize(10);
