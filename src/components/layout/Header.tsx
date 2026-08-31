@@ -79,17 +79,20 @@ export function Header() {
   const megaRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
-  /* Hide the header once the page is scrolled past the threshold and keep it
-     hidden while scrolling — it does not reappear on scroll-up. It only comes
-     back when the user returns near the top of the page. Throttled to one read
-     per frame so the listener never lands in the middle of a paint. */
+  /* The header only lives at the very top of the page. Once the user scrolls
+     down past the threshold it hides and stays hidden — it never reappears on
+     scroll-up or when the user pauses mid-page. It only comes back when the
+     user returns to the top. Throttled to one read per frame so the listener
+     never lands in the middle of a paint. */
   useEffect(() => {
     let frame = 0;
     const measure = () => {
       frame = 0;
       const y = window.scrollY;
       setScrolled(y > 24);
-      setHidden(y > 420);
+      // Show only near the very top; hidden everywhere else regardless of
+      // scroll direction or pauses.
+      setHidden(y > 120);
     };
     const onScroll = () => {
       if (frame) return;
@@ -181,7 +184,7 @@ export function Header() {
           <Link
             href="/"
             aria-label="CONFAST home"
-            className="relative z-10 -ml-6 sm:-ml-8 md:-ml-12 lg:-ml-16"
+            className="relative z-10"
           >
             <Logo tone={invert ? "invert" : "ink"} />
           </Link>

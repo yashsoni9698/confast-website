@@ -34,7 +34,10 @@ export function StatsSection() {
           className="head-gap grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           {stats.map((s) => (
-            <div key={s.label} className="card-apple group p-8 lg:p-10">
+            <div
+              key={s.label}
+              className="card-apple group flex flex-col items-center p-8 text-center lg:p-10"
+            >
               <Counter
                 to={s.to}
                 suffix={s.suffix}

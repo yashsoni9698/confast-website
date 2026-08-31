@@ -241,88 +241,49 @@
 
 @layer utilities {
   /* ── Layout ─────────────────────────────────
-     One content column for the whole site. The column is capped below
-     the viewport (1440px) and centred, so on large office monitors content
-     never stretches edge-to-edge — there is always a clear, balanced margin
-     on both sides. Side padding scales up with the viewport so the gutter
-     stays comfortable at every width, then the max-width takes over once the
-     screen is wider than the column. */
-  .shell {
-    width: 100%;
-    max-width: 1440px;
-    margin-inline: auto;
-    padding-inline: 1.5rem;
-  }
-  @media (min-width: 480px) {
-    .shell {
-      padding-inline: 2rem;
-    }
-  }
-  @media (min-width: 768px) {
-    .shell {
-      padding-inline: 3rem;
-    }
-  }
-  @media (min-width: 1024px) {
-    .shell {
-      padding-inline: 4rem;
-    }
-  }
-  @media (min-width: 1680px) {
-    /* Past the column width the padding no longer grows — the auto margins
-       carry the extra space evenly on both sides. A little breathing room is
-       still forced so content is never flush to the column edge. */
-    .shell {
-      padding-inline: 3rem;
-    }
+     One content column for the whole site.
+
+     Two things create the balanced margin the design needs at EVERY width:
+
+     1. `--shell-gutter` — a fluid side padding that grows smoothly with the
+        viewport (never shrinks as the screen widens). It uses clamp() so the
+        gutter is comfortable on a phone and generous on a desktop, with no
+        sudden jumps at breakpoints. This is the margin you always see on the
+        left and right of the content.
+
+     2. `max-width` + auto margins — once the viewport is wider than the
+        column, the leftover space is split evenly on both sides on top of the
+        gutter, so content is always centred and framed, never flush-left.
+
+     The column is capped at 1240px. 1440px was too wide: it stretched text
+     nearly edge-to-edge on laptops and left inner `max-w-*` blocks stranded on
+     the left with a lot of empty space on the right — which is what read as
+     "content jammed to the left with no margin". A tighter column keeps line
+     lengths readable and guarantees a visible margin on common laptop widths
+     (1280–1600px), not just on ultra-wide monitors. */
+  :root {
+    /* min 20px · scales with viewport · max 96px */
+    --shell-gutter: clamp(1.25rem, 5vw, 6rem);
+    --shell-max: 1240px;
   }
 
-  /* Alias kept so inner pages keep working — identical column to .shell */
+  .shell,
   .container-custom {
     width: 100%;
-    max-width: 1440px;
+    max-width: var(--shell-max);
     margin-inline: auto;
-    padding-inline: 1.5rem;
-  }
-  @media (min-width: 480px) {
-    .container-custom {
-      padding-inline: 2rem;
-    }
-  }
-  @media (min-width: 768px) {
-    .container-custom {
-      padding-inline: 3rem;
-    }
-  }
-  @media (min-width: 1024px) {
-    .container-custom {
-      padding-inline: 4rem;
-    }
-  }
-  @media (min-width: 1680px) {
-    .container-custom {
-      padding-inline: 3rem;
-    }
+    padding-inline: var(--shell-gutter);
   }
 
   /* A slightly wider variant for full-bleed feature rows (galleries, hero
      media) that still want to sit inside a controlled margin rather than
-     touch the screen edge. */
+     touch the screen edge. Shares the same fluid gutter so its side margin
+     lines up with the rest of the page. */
   .shell-wide {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1440px;
     margin-inline: auto;
-    padding-inline: 1.5rem;
-  }
-  @media (min-width: 768px) {
-    .shell-wide {
-      padding-inline: 3rem;
-    }
-  }
-  @media (min-width: 1024px) {
-    .shell-wide {
-      padding-inline: 4rem;
-    }
+    padding-inline: var(--shell-gutter);
   }
 
   /* One vertical rhythm for every section. More generous than before —

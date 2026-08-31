@@ -410,8 +410,34 @@ export default async function ProductDetailPage({ params }: Props) {
       </section>
 
       {/* ══════════ CTA ══════════ */}
-      <section className="bg-[#F39100]">
-        <div className="band shell">
+      <section className="relative overflow-hidden bg-[#101010]">
+        {/* Background image — the product, softened so text stays legible */}
+        <Image
+          src={product.image}
+          alt=""
+          fill
+          aria-hidden="true"
+          className="pointer-events-none object-cover object-right opacity-30"
+          sizes="100vw"
+        />
+        {/* Blueprint texture + gradient wash for depth and contrast */}
+        <div className="blueprint-invert absolute inset-0 opacity-40" />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, #101010 0%, rgba(16,16,16,0.92) 45%, rgba(16,16,16,0.55) 100%)",
+          }}
+        />
+        <div
+          className="pointer-events-none absolute -right-40 -top-20 h-[34rem] w-[34rem] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(243,145,0,0.22) 0%, transparent 68%)",
+          }}
+        />
+
+        <div className="band shell relative">
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-24">
             <h2 className="display display-md text-white">
               <Reveal>Specify {product.name.replace("Confast ", "")}</Reveal>
@@ -425,7 +451,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/quote"
-                  className="btn bg-[#1A1A18] text-white hover:bg-white hover:text-[#1A1A18]"
+                  className="btn bg-[#F39100] text-[#1A1A18] hover:bg-white hover:text-[#1A1A18]"
                 >
                   Request a Quote
                 </Link>
