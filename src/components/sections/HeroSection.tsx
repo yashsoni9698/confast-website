@@ -30,24 +30,31 @@ type Frame = {
 const FRAMES: Frame[] = [
   {
     id: "tiling",
-    poster:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=70&fit=crop",
+    poster: "/images/slider/Adhesive.png",
     caption: "Tile adhesives",
     // video: "/videos/hero-tiling.mp4",
   },
   {
     id: "waterproofing",
-    poster:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=70&fit=crop",
+    poster: "/images/slider/WaterProofing.png",
     caption: "Waterproofing systems",
     // video: "/videos/hero-waterproofing.mp4",
   },
   {
     id: "epoxy",
-    poster:
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&q=70&fit=crop",
+    poster: "/images/slider/Epoxy.png",
     caption: "Epoxy grouts",
     // video: "/videos/hero-epoxy.mp4",
+  },
+  {
+    id: "construction",
+    poster: "/images/slider/Construction.png",
+    caption: "On-site construction",
+  },
+  {
+    id: "planning",
+    poster: "/images/slider/planning.png",
+    caption: "Project planning",
   },
 ];
 
@@ -217,14 +224,8 @@ export function HeroSection() {
 
       {/* ───────── frame caption + indicators ───────── */}
       <div className="absolute inset-x-0 bottom-0 z-10 pb-7">
-        <div className="shell grid grid-cols-3 items-end gap-4">
-          <p className="eyebrow hidden text-dim-invert sm:block">
-            {FRAMES[active].caption}
-          </p>
-
-          <div className="col-span-3 sm:col-span-1" />
-
-          <div className="hidden items-center justify-end gap-2 sm:flex">
+        <div className="shell flex items-end justify-center gap-4">
+          <div className="flex items-center justify-center gap-2">
             {FRAMES.map((frame, i) => (
               <button
                 key={frame.id}
