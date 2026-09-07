@@ -4,6 +4,7 @@ import Image from "next/image";
 import { PageHero } from "@/components/layout/PageHero";
 import { Reveal, FadeUp, WordFade, Parallax, Counter } from "@/components/ui/Reveal";
 import { Marquee } from "@/components/ui/Marquee";
+import { ChemParticles } from "@/components/ui/ChemParticles";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -175,8 +176,9 @@ export default function AboutPage() {
       />
 
       {/* ══════════ VALUES ══════════ */}
-      <section className="bg-[#101010]">
-        <div className="band shell">
+      <section className="relative overflow-hidden bg-[#101010]">
+        <ChemParticles count={4} />
+        <div className="band shell relative">
           <div className="max-w-3xl">
             <FadeUp>
               <div className="flex items-center gap-3">
@@ -198,8 +200,10 @@ export default function AboutPage() {
                 key={v.n}
                 className="group border-t border-white/10 py-10 sm:px-8 sm:first:pl-0 md:py-14"
               >
-                <p className="numeral text-sm font-semibold text-[#F39100]">{v.n}</p>
-                <h3 className="display mt-5 text-xl text-white sm:text-2xl">
+                <p className="numeral text-2xl font-semibold leading-none tracking-tight text-[#F39100] sm:text-3xl">
+                  {v.n}
+                </p>
+                <h3 className="display mt-6 text-xl text-white sm:text-2xl">
                   {v.title}
                 </h3>
                 <p className="mt-4 max-w-md text-sm font-normal leading-relaxed text-white/70">
@@ -214,8 +218,8 @@ export default function AboutPage() {
       {/* ══════════ MISSION / VISION ══════════ */}
       <section className="bg-[#F7F6F3]">
         <div className="band shell">
-          <div className="grid gap-px md:grid-cols-2">
-            <FadeUp className="rounded-[1.5rem] bg-[#1A1A18] p-10 lg:p-16">
+          <div className="grid gap-6 md:grid-cols-2 lg:gap-10">
+            <FadeUp className="relative z-0 rounded-[1.5rem] bg-[#1A1A18] p-10 transition-transform duration-500 ease-out will-change-transform hover:z-10 hover:scale-[1.035] hover:shadow-[0_28px_64px_rgba(26,26,24,0.4)] lg:p-16">
               <p className="eyebrow text-[#F39100]">Our Mission</p>
               <p className="display mt-8 text-2xl leading-snug text-white sm:text-[2rem]">
                 To be India&apos;s most trusted construction chemical brand.
@@ -227,7 +231,10 @@ export default function AboutPage() {
               </p>
             </FadeUp>
 
-            <FadeUp delay={0.1} className="rounded-[1.5rem] bg-[#F39100] p-10 lg:p-16">
+            <FadeUp
+              delay={0.1}
+              className="relative z-0 rounded-[1.5rem] bg-[#F39100] p-10 transition-transform duration-500 ease-out will-change-transform hover:z-10 hover:scale-[1.035] hover:shadow-[0_28px_64px_rgba(243,145,0,0.45)] lg:p-16"
+            >
               <p className="eyebrow text-white/80">Our Vision</p>
               <p className="display mt-8 text-2xl leading-snug text-white sm:text-[2rem]">
                 Structures that last generations.

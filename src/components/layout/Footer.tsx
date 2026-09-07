@@ -19,9 +19,8 @@ const columns = [
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Projects", href: "/projects" },
-      { label: "Services", href: "/services" },
-      { label: "Gallery", href: "/gallery" },
+      { label: "Projects", href: "/#projects" },
+      { label: "Services", href: "/#services" },
       { label: "Contact", href: "/contact" },
       { label: "Request Quote", href: "/quote" },
     ],
@@ -31,7 +30,7 @@ const columns = [
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#101010] text-white">
-      <div className="blueprint-invert absolute inset-0 opacity-40" />
+      <div className="blueprint-invert blueprint-pan absolute inset-0 opacity-40" />
 
       <div className="shell relative">
         {/* top */}
@@ -114,13 +113,6 @@ export function Footer() {
               </p>
             </div>
           </div>
-        </div>
-
-        {/* oversized wordmark */}
-        <div className="border-b border-white/10 py-8 sm:py-12 lg:py-16">
-          <p className="display select-none text-[12vw] leading-[0.85] tracking-[-0.04em] text-white/[0.07] sm:text-[15vw]">
-            CONFAST
-          </p>
         </div>
 
         {/* bottom */}

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useReducedMotion } from "@/lib/useMediaQuery";
+import { ChemParticles } from "@/components/ui/ChemParticles";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -171,6 +172,12 @@ export function HeroSection() {
           }}
         />
       </div>
+
+      {/* Fine aggregate drifting up through the frame — reads as dust/mix
+          settling rather than a generic particle effect. Sits above the
+          media crossfade, below the text, and respects reduced-motion via
+          the shared `.particle-rise` rule in globals.css. */}
+      <ChemParticles count={5} className="z-[1]" />
 
       {/* ───────── centred composition ───────── */}
       <div

@@ -34,7 +34,6 @@ src/
 │   │   ├── page.tsx        # Products listing
 │   │   └── [slug]/page.tsx # Individual product pages
 │   ├── projects/page.tsx   # Projects showcase
-│   ├── gallery/page.tsx    # Image gallery
 │   ├── services/page.tsx   # Services page
 │   ├── contact/page.tsx    # Contact page
 │   ├── quote/page.tsx      # Quote request form

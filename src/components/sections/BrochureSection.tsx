@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { FadeUp, Parallax } from "@/components/ui/Reveal";
 import { SectionHead } from "@/components/ui/SectionHead";
+import { ChemParticles } from "@/components/ui/ChemParticles";
 
 const BROCHURE = "/brochure/confast-brochure.pdf";
 
@@ -17,14 +18,15 @@ const contents = [
 export function BrochureSection() {
   return (
     <section id="brochure" className="relative overflow-hidden bg-[#101010]">
-      <div className="blueprint-invert absolute inset-0 opacity-50" />
+      <div className="blueprint-invert blueprint-pan absolute inset-0 opacity-50" />
       <div
-        className="pointer-events-none absolute -left-40 bottom-0 h-[34rem] w-[34rem] rounded-full"
+        className="chem-pulse pointer-events-none absolute -left-40 bottom-0 h-[34rem] w-[34rem] rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(243,145,0,0.16) 0%, transparent 68%)",
         }}
       />
+      <ChemParticles count={4} className="left-1/4 right-0" />
 
       <div className="band shell relative">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_0.85fr] lg:gap-24">

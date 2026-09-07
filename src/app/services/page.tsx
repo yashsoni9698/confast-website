@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { FadeUp, Reveal, WordFade } from "@/components/ui/Reveal";
+import { ChemParticles } from "@/components/ui/ChemParticles";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -156,8 +157,9 @@ export default function ServicesPage() {
       </section>
 
       {/* ══════════ CTA ══════════ */}
-      <section className="bg-[#101010]">
-        <div className="band shell">
+      <section className="relative overflow-hidden bg-[#101010]">
+        <ChemParticles count={4} />
+        <div className="band shell relative">
           <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end lg:gap-24">
             <h2 className="display display-md text-white">
               <Reveal>Bring us in</Reveal>
