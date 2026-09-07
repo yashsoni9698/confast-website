@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FadeUp, Reveal } from "@/components/ui/Reveal";
+import { ChemParticles } from "@/components/ui/ChemParticles";
 
 /* The closing band every major contractor site ends on: one photograph,
    one question, two clear paths — start a project, or join us. */
@@ -22,6 +23,9 @@ export function ClosingCTA() {
         <div className="absolute inset-0 bg-[#0B0B0A]/78" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0A]/85 via-[#0B0B0A]/55 to-[#0B0B0A]/80" />
       </div>
+
+      {/* faint aggregate drifting up through the dark overlay */}
+      <ChemParticles count={5} />
 
       <div className="band shell relative">
         <div className="max-w-3xl">

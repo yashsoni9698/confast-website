@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FadeUp, Reveal } from "@/components/ui/Reveal";
 import { ProductGallery } from "@/components/ui/ProductGallery";
+import { ChemParticles } from "@/components/ui/ChemParticles";
 import productsData from "@/data/products.json";
 import type { Product } from "@/types";
 
@@ -52,14 +53,15 @@ export default async function ProductDetailPage({ params }: Props) {
     <>
       {/* ══════════ HERO ══════════ */}
       <section className="relative overflow-hidden bg-[#101010] pt-32 pb-16 sm:pt-40 lg:pt-44 lg:pb-24">
-        <div className="blueprint-invert absolute inset-0 opacity-50" />
+        <div className="blueprint-invert blueprint-pan absolute inset-0 opacity-50" />
         <div
-          className="pointer-events-none absolute -right-40 top-0 h-[36rem] w-[36rem] rounded-full"
+          className="chem-pulse pointer-events-none absolute -right-40 top-0 h-[36rem] w-[36rem] rounded-full"
           style={{
             background:
               "radial-gradient(circle, rgba(243,145,0,0.18) 0%, transparent 68%)",
           }}
         />
+        <ChemParticles count={4} />
 
         <div className="shell relative">
           <FadeUp y={14}>
@@ -230,14 +232,15 @@ export default async function ProductDetailPage({ params }: Props) {
 
       {/* ══════════ APPLICATIONS ══════════ */}
       <section className="relative overflow-hidden bg-[#101010]">
-        <div className="blueprint-invert absolute inset-0 opacity-40" />
+        <div className="blueprint-invert blueprint-pan absolute inset-0 opacity-40" />
         <div
-          className="pointer-events-none absolute -left-40 bottom-0 h-[34rem] w-[34rem] rounded-full"
+          className="chem-pulse pointer-events-none absolute -left-40 bottom-0 h-[34rem] w-[34rem] rounded-full"
           style={{
             background:
               "radial-gradient(circle, rgba(243,145,0,0.16) 0%, transparent 68%)",
           }}
         />
+        <ChemParticles count={3} className="left-0 right-1/2" />
 
         <div className="band shell relative">
           <div className="grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:gap-20">
@@ -339,16 +342,9 @@ export default async function ProductDetailPage({ params }: Props) {
       {/* ══════════ SPECIFICATIONS ══════════ */}
       <section id="specifications" className="scroll-mt-24 bg-[#F7F6F3]">
         <div className="band shell">
-          <div className="flex items-end justify-between gap-6">
-            <h2 className="display display-md text-[#1A1A18]">
-              <Reveal>Technical data</Reveal>
-            </h2>
-            <FadeUp>
-              <Link href="/contact" className="btn btn-line hidden sm:inline-flex">
-                Request TDS
-              </Link>
-            </FadeUp>
-          </div>
+          <h2 className="display display-md text-[#1A1A18]">
+            <Reveal>Technical data</Reveal>
+          </h2>
 
           <div className="mt-10 hairline" />
           <FadeUp stagger={0.05}>
@@ -421,7 +417,7 @@ export default async function ProductDetailPage({ params }: Props) {
           sizes="100vw"
         />
         {/* Blueprint texture + gradient wash for depth and contrast */}
-        <div className="blueprint-invert absolute inset-0 opacity-40" />
+        <div className="blueprint-invert blueprint-pan absolute inset-0 opacity-40" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -430,7 +426,7 @@ export default async function ProductDetailPage({ params }: Props) {
           }}
         />
         <div
-          className="pointer-events-none absolute -right-40 -top-20 h-[34rem] w-[34rem] rounded-full"
+          className="chem-pulse pointer-events-none absolute -right-40 -top-20 h-[34rem] w-[34rem] rounded-full"
           style={{
             background:
               "radial-gradient(circle, rgba(243,145,0,0.22) 0%, transparent 68%)",

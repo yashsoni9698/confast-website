@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { lockScroll } from "@/lib/lenis";
 import { Logo } from "@/components/ui/Logo";
@@ -13,19 +14,12 @@ const nav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
-  { label: "Projects", href: "/projects" },
-  { label: "Services", href: "/services" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Services", href: "/#services" },
   { label: "Contact", href: "/contact" },
 ];
 
 const productLinks = [
-  {
-    label: "Block Fix",
-    href: "/products/block-fix",
-    image: "/images/products/block-fix.png",
-    note: "Block mounting mortar",
-  },
   {
     label: "TileSet 11",
     href: "/products/tileset-11",
@@ -51,6 +45,12 @@ const productLinks = [
     note: "S1 super-flex adhesive",
   },
   {
+    label: "Block Fix",
+    href: "/products/block-fix",
+    image: "/images/products/block-fix.png",
+    note: "Block mounting mortar",
+  },
+  {
     label: "Epoxy 77",
     href: "/products/epoxy-77",
     image: "/images/products/epoxy-77.png",
@@ -63,6 +63,8 @@ const productLinks = [
     note: "Bonding & waterproofing",
   },
 ];
+/* Displayed as 2 columns filled top-to-bottom: TileSet 11/22/33/Epoxy 77 in
+   column 1, the remaining products in column 2 — see grid-flow-col below. */
 
 /* Kept as a named export — inner pages and the footer import Wordmark */
 export function Wordmark({ tone = "ink" }: { tone?: "ink" | "invert" }) {
@@ -180,7 +182,7 @@ export function Header() {
           hidden && !open ? "-translate-y-full" : "translate-y-0"
         )}
       >
-        <div className="shell flex items-center gap-6">
+        <div className="flex w-full items-center gap-6 px-[var(--shell-gutter)]">
           <Link
             href="/"
             aria-label="CONFAST home"
@@ -212,7 +214,7 @@ export function Header() {
                     aria-expanded={isProducts ? mega : undefined}
                     aria-current={isActive ? "page" : undefined}
                     className={cn(
-                      "link-underline flex items-center gap-1.5 text-base tracking-[-0.012em] transition-colors duration-500",
+                      "flex items-center gap-1 text-base tracking-[-0.012em] transition-colors duration-500",
                       isActive
                         ? "text-[#F39100]"
                         : invert
@@ -220,17 +222,16 @@ export function Header() {
                           : "text-muted hover:text-[#1A1A18]"
                     )}
                   >
-                    {item.label}
+                    <span className="link-underline">{item.label}</span>
                     {isProducts && (
-                      <span
+                      <ChevronDown
                         aria-hidden
+                        strokeWidth={2.5}
                         className={cn(
-                          "text-[0.6rem] transition-transform duration-500",
+                          "mt-0.5 h-4 w-4 shrink-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
                           mega && "rotate-180"
                         )}
-                      >
-                        ▾
-                      </span>
+                      />
                     )}
                   </Link>
 
@@ -245,7 +246,7 @@ export function Header() {
                       )}
                     >
                       <div className="overflow-hidden rounded-[1.5rem] bg-white shadow-[0_28px_80px_rgba(26,26,24,0.2)]">
-                        <div className="grid grid-cols-2 gap-1 p-4">
+                        <div className="grid grid-flow-col grid-rows-4 grid-cols-2 gap-1 p-4">
                           {productLinks.map((p) => (
                             <Link
                               key={p.href}
@@ -273,23 +274,6 @@ export function Header() {
                               </span>
                             </Link>
                           ))}
-                        </div>
-
-                        <div className="flex items-center justify-between gap-4 border-t border-[#1A1A18]/10 bg-[#F7F6F3] px-6 py-4">
-                          <p className="caption text-muted">
-                            Technical data sheets for every product
-                          </p>
-                          <Link
-                            href="/products"
-                            tabIndex={mega ? undefined : -1}
-                            onClick={() => setMega(false)}
-                            className="action"
-                          >
-                            View all
-                            <span aria-hidden className="action-chev">
-                              &rsaquo;
-                            </span>
-                          </Link>
                         </div>
                       </div>
                     </div>
@@ -365,7 +349,7 @@ export function Header() {
         }}
         inert={!open}
       >
-        <div className="blueprint-invert absolute inset-0 opacity-60" />
+        <div className="blueprint-invert blueprint-pan absolute inset-0 opacity-60" />
 
         <div className="shell relative flex h-full flex-col justify-between overflow-y-auto pt-28 pb-10">
           <div className="grid gap-14 lg:grid-cols-[1.35fr_1fr] lg:gap-20">

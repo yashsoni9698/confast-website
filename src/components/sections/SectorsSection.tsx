@@ -255,7 +255,7 @@ export function SectorsSection() {
             </div>
 
             <Link
-              href="/projects"
+              href="/#projects"
               className="action mt-10 w-fit"
             >
               See {sector.label.toLowerCase()} projects

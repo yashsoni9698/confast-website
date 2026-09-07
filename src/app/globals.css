@@ -233,8 +233,12 @@
     .hero-rise,
     .drift,
     .drift-slow,
-    .trace {
+    .trace,
+    .blueprint-pan,
+    .chem-pulse,
+    .particle-rise {
       animation: none !important;
+      opacity: 0.6;
     }
   }
 }
@@ -789,5 +793,61 @@
   }
   .trace {
     animation: trace 2.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  /* Blueprint grid, drawn slowly across itself — the "drawing under review"
+     motion. Pairs with `.blueprint` / `.blueprint-invert`; kept to one
+     background-size cycle (72px) so the loop is seamless. Slow enough
+     (30s) to read as ambient, not distracting. */
+  @keyframes blueprint-pan {
+    from {
+      background-position: 0 0, 0 0;
+    }
+    to {
+      background-position: 72px 72px, 72px 72px;
+    }
+  }
+  .blueprint-pan {
+    animation: blueprint-pan 32s linear infinite;
+  }
+
+  /* Chemical-bloom — a slow breathing glow for the corner-wash radial
+     gradients used across hero/CTA bands. Reads as a reaction settling
+     rather than a generic pulse: scale + opacity only, no colour shift. */
+  @keyframes chem-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.85;
+    }
+    50% {
+      transform: scale(1.12);
+      opacity: 1;
+    }
+  }
+  .chem-pulse {
+    animation: chem-pulse 9s var(--ease-premium) infinite;
+  }
+
+  /* Suspended-particle drift — fine aggregate/powder settling through a
+     mix, used sparingly as a single moving mote rather than a shower. */
+  @keyframes particle-rise {
+    0% {
+      transform: translate3d(0, 12%, 0);
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    88% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate3d(0, -112%, 0);
+      opacity: 0;
+    }
+  }
+  .particle-rise {
+    animation: particle-rise 14s ease-in-out infinite;
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Reveal, FadeUp } from "@/components/ui/Reveal";
+import { ChemParticles } from "@/components/ui/ChemParticles";
 
 /* ────────────────────────────────────────────
    PageHero — the masthead shared by every
@@ -27,16 +28,18 @@ export function PageHero({
 
   return (
     <section className="relative overflow-hidden bg-[#101010] pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-28">
-      <div className="blueprint-invert absolute inset-0 opacity-50" />
+      <div className="blueprint-invert blueprint-pan absolute inset-0 opacity-50" />
 
-      {/* corner wash */}
+      {/* corner wash — breathes slowly, like a reaction settling */}
       <div
-        className="pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full"
+        className="chem-pulse pointer-events-none absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(243,145,0,0.16) 0%, transparent 68%)",
         }}
       />
+
+      <ChemParticles count={4} />
 
       <div className="shell relative">
         {/* breadcrumb */}
