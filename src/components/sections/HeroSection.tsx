@@ -135,6 +135,7 @@ export function HeroSection() {
             aria-hidden
           >
             <div
+              key={i === active ? `${frame.id}-active` : frame.id}
               className={
                 i === active && !reduced ? "kenburns absolute inset-0" : "absolute inset-0"
               }
